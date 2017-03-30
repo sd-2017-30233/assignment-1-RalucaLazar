@@ -1,27 +1,25 @@
 package model;
 
-import Gateway.AdminGateway;
-import Gateway.EmployeeGateway;
-import Gateway.ReportGateway;
+import service.AdminService;
+import service.EmployeeService;
+import service.ReportService;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by Raluca on 22.03.2017.
  */
 public class Admin extends User {
 
-    public AdminGateway adminGateway;
-    public EmployeeGateway employeeGateway;
-    public ReportGateway reportGateway;
+    public AdminService adminGateway;
+    public EmployeeService employeeGateway;
+    public ReportService reportGateway;
 
     public Admin(){
-        adminGateway = new AdminGateway();
-        employeeGateway = new EmployeeGateway();
-        reportGateway = new ReportGateway();
+        adminGateway = new AdminService();
+        employeeGateway = new EmployeeService();
+        reportGateway = new ReportService();
     }
 
     public void addEmployee(Connection conn, Employee a) throws SQLException {

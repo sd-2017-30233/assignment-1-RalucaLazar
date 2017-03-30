@@ -1,6 +1,6 @@
 package model;
 
-import Gateway.ClientGateway;
+import service.ClientService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,10 +14,10 @@ public class Client {
     private String idCardNumber;
     private String PNC;
     private String address;
-    public ClientGateway clientGateway;
+    public ClientService clientGateway;
 
     public Client(){
-        clientGateway = new ClientGateway();
+        clientGateway = new ClientService();
     }
 
     public int getId() {

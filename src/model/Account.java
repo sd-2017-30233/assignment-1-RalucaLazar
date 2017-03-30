@@ -1,6 +1,6 @@
 package model;
 
-import Gateway.AccountGateway;
+import service.AccountService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,10 +14,10 @@ public class Account {
     private float amount;
     private String date;
     private int clientId;
-    public AccountGateway accountGateway;
+    public AccountService accountGateway;
 
     public Account(){
-        accountGateway  = new AccountGateway();
+        accountGateway  = new AccountService();
     }
 
     public int getId() {

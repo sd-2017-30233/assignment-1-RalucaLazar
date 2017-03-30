@@ -1,14 +1,12 @@
 package model;
 
-import Gateway.AccountGateway;
-import Gateway.ClientGateway;
-import Gateway.EmployeeGateway;
-import Gateway.ReportGateway;
+import service.AccountService;
+import service.ClientService;
+import service.EmployeeService;
+import service.ReportService;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 
 /**
@@ -17,17 +15,17 @@ import java.time.LocalDate;
 public class Employee extends User {
 
     private String name;
-    public ClientGateway clientGateway;
-    public AccountGateway accountGateway;
-    public EmployeeGateway employeeGateway;
-    public ReportGateway reportGateway;
+    public ClientService clientGateway;
+    public AccountService accountGateway;
+    public EmployeeService employeeGateway;
+    public ReportService reportGateway;
 
     public Employee()
     {
-        clientGateway = new ClientGateway();
-        accountGateway = new AccountGateway();
-        employeeGateway = new EmployeeGateway();
-        reportGateway = new ReportGateway();
+        clientGateway = new ClientService();
+        accountGateway = new AccountService();
+        employeeGateway = new EmployeeService();
+        reportGateway = new ReportService();
     }
 
     public String getName() {
